@@ -1,7 +1,12 @@
+import { Heading } from './components/Heading'
+
+import './styles/theme.css'
+import './styles/global.css'
+
 export const App = () => {
   return (
     <>
-      <h1>Chronos Pomodoro</h1>
+      <Heading />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
         optio praesentium itaque non voluptatum mollitia eius, id consequatur
