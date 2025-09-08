@@ -1,18 +1,23 @@
-import { Heading } from './components/Heading'
-
 import './styles/theme.css'
 import './styles/global.css'
+import { Container } from './components/Container'
+import { Heading } from './components/Heading'
 
 export const App = () => {
   return (
     <>
-      <Heading />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-        optio praesentium itaque non voluptatum mollitia eius, id consequatur
-        maiores. Consequuntur nam voluptatum quia, perspiciatis omnis velit aut
-        laudantium sequi neque!
-      </p>
+      <Container>
+        <Heading>Chronos Pomodoro</Heading>
+      </Container>
+      <Container>
+        <section>MENU</section>
+      </Container>
+      <Container>
+        <section>FORM</section>
+      </Container>
+      <Container>
+        <section>FOOTER</section>
+      </Container>
     </>
   )
 }
