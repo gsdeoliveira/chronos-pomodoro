@@ -6,6 +6,8 @@ import './styles/theme.css'
 import './styles/global.css'
 import { Menu } from './components/Menu'
 import { CountDown } from './components/CountDown'
+import { DefaultInput } from './components/DefaultInput'
+import { Cycles } from './components/Cycles'
 
 export const App = () => {
   return (
@@ -22,7 +24,23 @@ export const App = () => {
         <CountDown />
       </Container>
       <Container>
-        <section>FOOTER</section>
+        <form className='form' action=''>
+          <div className='formRow'>
+            <DefaultInput
+              labelText='task'
+              id='meuInput'
+              type='text'
+              placeholder='Digite algo'
+            />
+          </div>
+          <div className='formRow'>Lorem ipsum dolor sit amet.</div>
+          <div className='formRow'>
+            <Cycles />
+          </div>
+          <div className='formRow'>
+            <button>Enviar</button>
+          </div>
+        </form>
       </Container>
     </>
   )
