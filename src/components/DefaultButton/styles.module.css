@@ -1,7 +1,7 @@
 .button {
   border: none;
   background: var(--primary);
-  color: var(--text-over-primary);
+  color: var(--text-over-primary-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +24,7 @@
 
 .green {
   background: var(--primary);
-  color: var(--text-over-primary);
+  color: var(--text-over-primary-dark);
 }
 
 .red {

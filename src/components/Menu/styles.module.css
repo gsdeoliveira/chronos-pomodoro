@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   background: var(--primary);
-  color: var(--text-over-primary);
+  color: var(--text-over-primary-dark);
   text-decoration: none;
   transition: all 0.2s ease-in-out;
   padding: 1.2rem;
