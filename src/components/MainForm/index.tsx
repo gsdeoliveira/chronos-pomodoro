@@ -4,8 +4,13 @@ import { DefaultButton } from '../DefaultButton'
 import { DefaultInput } from '../DefaultInput'
 
 export const MainForm = () => {
+  function handleCreateNewTask(event: React.FormEvent) {
+    event.preventDefault()
+    console.log('Criando nova tarefa')
+  }
+
   return (
-    <form className='form' action=''>
+    <form onSubmit={handleCreateNewTask} className='form' action=''>
       <div className='formRow'>
         <DefaultInput labelText='task' id='meuInput' type='text' placeholder='Digite algo' />
       </div>
