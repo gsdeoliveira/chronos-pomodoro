@@ -5,18 +5,21 @@ import { DefaultInput } from '../DefaultInput'
 import { useRef } from 'react'
 import type { TaskModel } from '../../models/TaskModel'
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext'
+import { getNextCycle } from '../../utils/getNextCycle'
 
 export const MainForm = () => {
-  const { setState } = useTaskContext()
+  const { state, setState } = useTaskContext()
   const taskNameInput = useRef<HTMLInputElement>(null)
+
+  const nextCycle = getNextCycle(state.currentCycle)
 
   function handleCreateNewTask(event: React.FormEvent) {
     event.preventDefault()
 
-    if (taskNameInput.current === null) return
+    if (!taskNameInput.current) return
 
     const taskName = taskNameInput.current.value.trim()
-    if (taskName === '') {
+    if (!taskName) {
       alert('Digite o nome da tarefa.')
       return
     }
@@ -38,7 +41,7 @@ export const MainForm = () => {
         ...prevState,
         config: { ...prevState.config },
         activeTask: newTask,
-        currentCycle: 1, // Conferir
+        currentCycle: nextCycle,
         secondsRemaining, // Conferir
         formattedSecondsRemaining: '00:00', // Conferir
         tasks: [...prevState.tasks, newTask],
