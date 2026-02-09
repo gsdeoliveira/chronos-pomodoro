@@ -47,7 +47,7 @@ export const MainForm = () => {
         currentCycle: nextCycle,
         secondsRemaining, // Conferir
         formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
-        tasks: [...prevState.tasks, newTask], 
+        tasks: [...prevState.tasks, newTask],
       }
     })
   }
@@ -59,7 +59,11 @@ export const MainForm = () => {
       </div>
       <div className='formRow'>Lorem ipsum dolor sit amet.</div>
       <div className='formRow'>
-        <Cycles />
+        {state.currentCycle > 0 && (
+          <div className='formRow'>
+            <Cycles />
+          </div>
+        )}
       </div>
       <div className='formRow'>
         <DefaultButton icon={<PlayCircleIcon />} />
