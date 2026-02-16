@@ -55,7 +55,14 @@ export const MainForm = () => {
   return (
     <form onSubmit={handleCreateNewTask} className='form' action=''>
       <div className='formRow'>
-        <DefaultInput labelText='task' id='meuInput' type='text' placeholder='Digite algo' ref={taskNameInput} />
+        <DefaultInput
+          labelText='task'
+          id='meuInput'
+          type='text'
+          placeholder='Digite algo'
+          ref={taskNameInput}
+          disabled={!!state.activeTask}
+        />
       </div>
       <div className='formRow'>Lorem ipsum dolor sit amet.</div>
       <div className='formRow'>
