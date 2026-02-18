@@ -59,6 +59,9 @@ export const MainForm = () => {
         activeTask: null,
         secondsRemaining: 0,
         formattedSecondsRemaining: '00:00',
+        tasks: prevState.tasks.map(task => {
+          return task.id === prevState.activeTask?.id ? { ...task, interruptDate: Date.now() } : task
+        }),
       }
     })
   }
