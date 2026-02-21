@@ -6,12 +6,12 @@ type TaskContextProviderProps = {
   children: React.ReactNode
 }
 
-export const TaskContextProvider = ({ children }: TaskContextProviderProps) => {
+export function TaskContextProvider({ children }: TaskContextProviderProps) {
   const [state, setState] = useState(initialTaskState)
 
   useEffect(() => {
-    console.log('TaskContext state changed:', state)
+    console.log(state)
   }, [state])
 
-  return <TaskContext value={{ state, setState }}>{children}</TaskContext>
+  return <TaskContext.Provider value={{ state, setState }}>{children}</TaskContext.Provider>
 }
